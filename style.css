@@ -4,6 +4,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
+    padding: 20px;
 }
 .coluna-esquerda {
     grid-column: 1;
@@ -26,6 +28,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     gap: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 h1, h2 {
     color: #8b0000;
@@ -41,7 +44,7 @@ input[type="text"], input[type="number"], textarea {
     border: none;
     border-bottom: 1px solid #8b5a2b;
     font-size: 1rem;
-
+    outline: none;
 }
 .personagem {
     grid-column: 1 / -1; 
@@ -50,7 +53,7 @@ input[type="text"], input[type="number"], textarea {
     gap: 15px 10px; 
     align-items: center;
     margin-bottom: 20px;
-     background: rgba(0, 0, 0, 0.03);
+    background: rgba(0, 0, 0, 0.03);
     padding: 15px;
     border: 1px solid #8b5a2b;
 }
@@ -59,13 +62,11 @@ input[type="text"], input[type="number"], textarea {
     margin: 0;
     margin-bottom: 5px;
 }
-
 .personagem input {
     width: 100%;
     box-sizing: border-box;
     padding: 2px 5px;
 }
-
 .atributos {
     background: rgba(139, 90, 43, 0.04); 
     padding: 12px;
@@ -110,14 +111,13 @@ input[type="text"], input[type="number"], textarea {
     width: 38px ; 
     text-align: center;
 }
-
 .pericias {
     display: flex;
     flex-direction: column;
     gap: 3px;
-     background: rgba(139, 90, 43, 0.04); 
-     border: 1px solid rgba(139, 90, 43, 0.3);
-     padding: 10px;
+    background: rgba(139, 90, 43, 0.04); 
+    border: 1px solid rgba(139, 90, 43, 0.3);
+    padding: 10px;
 }
 .pericia {
     display: flex;
@@ -126,7 +126,6 @@ input[type="text"], input[type="number"], textarea {
     border-bottom: 1px dashed rgba(139, 90, 43, 0.3);
     padding-bottom: 2px;
 }
-
 .pericia label {
     flex-grow: 1;
     margin-left: 5px;
@@ -152,7 +151,6 @@ input[type="text"], input[type="number"], textarea {
     height: fit-content; 
 }
 .habilidade_2 {
-    
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -182,4 +180,76 @@ input[type="text"], input[type="number"], textarea {
 #caracteristicas {
     height: 456px; 
 }
-@media
+
+/* Estilo da Área dos Botões */
+.botoes-container {
+    text-align: center; 
+    margin: 30px 0 50px 0; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+    align-items: center;
+}
+.botoes-acao {
+    display: flex; 
+    gap: 10px; 
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+.botoes-acao button {
+    padding: 10px 15px; 
+    cursor: pointer; 
+    font-family: inherit;
+    background-color: #f4ecd8;
+    border: 1px solid #8b5a2b;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #332211;
+    transition: all 0.2s;
+}
+.botoes-acao button:hover {
+    background-color: #e8dcc2;
+}
+.botao-seletor-ficha {
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    background-color: transparent;
+    border: 1px solid #8b5a2b;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* ========================================= */
+/* MODO MOBILE (APP) - Ativado em ecrãs pequenos */
+/* ========================================= */
+@media (max-width: 850px) {
+    body {
+        padding: 5px;
+    }
+    .ficha {
+        width: 100%;          
+        min-height: auto;
+        grid-template-columns: 1fr; 
+        padding: 15px;
+    }
+    .coluna-esquerda, .coluna-direita {
+        grid-column: 1;       
+    }
+    .personagem {
+        grid-template-columns: 1fr; 
+        gap: 5px;
+    }
+    .personagem label {
+        margin-top: 5px;
+    }
+    .atributos {
+        grid-template-columns: 1fr; 
+    }
+    input[type="number"], input[type="text"], button {
+        padding: 8px;
+        font-size: 1.1rem; 
+    }
+    .pericia {
+        padding: 8px 0;
+    }
+}
