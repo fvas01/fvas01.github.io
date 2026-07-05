@@ -25,20 +25,14 @@ let listaFichas = JSON.parse(localStorage.getItem('listaFichas')) || [{ id: '1',
 let fichaAtualId = localStorage.getItem('fichaAtualId') || '1';
 
 // ==========================================
-// FUNÇÕES AUXILIARES DE CRIPTOGRAFIA (BASE64)
+// FUNÇÕES DE CRIPTOGRAFIA (BASE64)
 // ==========================================
-/**
- * Converte uma string UTF-8 para Base64 de forma segura (previne problemas com acentuação)
- */
 function codificarParaBase64(str) {
     return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
         return String.fromCharCode(parseInt(p1, 16));
     }));
 }
 
-/**
- * Decodifica uma string Base64 de volta para UTF-8 de forma segura
- */
 function decodificarDeBase64(str) {
     return decodeURIComponent(Array.prototype.map.call(atob(str), function(c) {
         return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
@@ -71,7 +65,7 @@ function atualizarPericias() {
     linhasDePericia.forEach(function(linha) {
         let inputBonus = linha.querySelector('input[type="number"]:not([readonly])');
         let inputTotal = linha.querySelector('input[readonly]');
-        let checkboxTreino = inlineObterCheckbox(linha);
+        let checkboxTreino = linha.querySelector('input[type="checkbox"]');
 
         if (!inputBonus || !inputTotal) return;
 
@@ -92,13 +86,8 @@ function atualizarPericias() {
     });
 }
 
-// Helper rápido para pegar checkbox interno
-function inlineObterCheckbox(linha) {
-    return linha.querySelector('input[type="checkbox"]');
-}
-
 // ==========================================
-// GERENCIAMENTO DA FICHA (SALVAR, CARREGAR, EXCLUIR)
+// GESTÃO DA FICHA (SALVAR, CARREGAR, EXCLUIR)
 // ==========================================
 function salvarFicha() {
     let elementos = document.querySelectorAll('input, textarea');
@@ -116,7 +105,6 @@ function salvarFicha() {
     
     localStorage.setItem(`ficha_${fichaAtualId}`, JSON.stringify(dadosFicha));
 
-    // Atualizar nome do personagem na lista lateral/topo
     let campoNome = document.getElementById('nome');
     let nomePersonagem = campoNome ? (campoNome.value || 'Personagem Sem Nome') : 'Personagem Sem Nome';
     
@@ -135,7 +123,6 @@ function carregarFicha(id) {
     let dadosSalvos = localStorage.getItem(`ficha_${id}`);
     let elementos = document.querySelectorAll('input, textarea');
     
-    // Limpar campos antes de carregar
     elementos.forEach(el => {
         if (el.id) {
             if (el.type === 'checkbox') el.checked = false;
@@ -188,6 +175,8 @@ function desenharListaFichas() {
         botaoApagar.style.marginLeft = '4px';
         botaoApagar.style.cursor = 'pointer';
         botaoApagar.title = 'Apagar esta ficha permanentemente';
+        botaoApagar.style.background = 'transparent';
+        botaoApagar.style.border = 'none';
         
         botaoApagar.onclick = function(evento) {
             evento.stopPropagation(); 
@@ -265,9 +254,7 @@ function verificarEImportarFichaDoLink() {
     let parametrosUrl = new URLSearchParams(window.location.search);
     let dadosFichaCodificados = parametrosUrl.get('importar');
 
-    if (!dadosFichaCodificados) {
-        return;
-    }
+    if (!dadosFichaCodificados) return;
 
     try {
         let dadosJsonString = decodificarDeBase64(dadosFichaCodificados);
@@ -282,24 +269,20 @@ function verificarEImportarFichaDoLink() {
             dadosFichaImportada.id = novoId;
         }
 
-        // Adiciona à base de dados local
         localStorage.setItem(`ficha_${novoId}`, JSON.stringify(dadosFichaImportada));
 
-        // Atualiza a lista geral
         listaFichas.push({ id: novoId, name: novoNome, nome: novoNome });
         localStorage.setItem('listaFichas', JSON.stringify(listaFichas));
 
-        // Define como a atual ativa
         fichaAtualId = novoId;
         localStorage.setItem('fichaAtualId', novoId);
 
         alert(`Ficha de "${nomeOriginal}" importada com sucesso!`);
 
     } catch (erro) {
-        console.error("Erro ao importar a ficha do link:", erro);
+        console.error("Erro ao importar a ficha:", erro);
         alert("Ops! Ocorreu um erro ao processar o link. Certifique-se de que o link de partilha está completo.");
     } finally {
-        // Limpa o parâmetro da URL do navegador sem recarregar a página
         let urlSemParametros = window.location.origin + window.location.pathname;
         window.history.replaceState({}, document.title, urlSemParametros);
     }
@@ -308,14 +291,10 @@ function verificarEImportarFichaDoLink() {
 // ==========================================
 // INICIALIZAÇÃO DO SISTEMA & ESCUTADORES
 // ==========================================
-// 1. Tenta importar do link antes de desenhar a interface
 verificarEImportarFichaDoLink();
-
-// 2. Renderiza a lista de personagens guardados e carrega o personagem ativo
 desenharListaFichas();
 carregarFicha(fichaAtualId);
 
-// 3. Regista os escutadores para autosave
 let todosOsCampos = document.querySelectorAll('input, textarea');
 todosOsCampos.forEach(function(campo) {
     campo.addEventListener('input', function() {
