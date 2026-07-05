@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="style.css"> 
     <title>Ficha Tormenta20</title>
 </head>
 <body>
 
 <div class="ficha">
-
     <div class="personagem">
-        <h1>informacoes de personagem</h1>
+        <h1>Informações de Personagem</h1>
         <label for="nome">Nome</label>
         <input type="text" id="nome">
         <label for="raca">Raça</label>
@@ -27,7 +26,6 @@
     </div>
 
     <div class="coluna-esquerda">
-            
         <div class="atributos">
             <h2>Atributos</h2>
             <div class="atributo">
@@ -68,74 +66,74 @@
         </div>
 
         <div class="habilidades">
-            <h2>ataques</h2>
+            <h2>Ataques</h2>
             <textarea id="ataques"></textarea>  
-            <h2>itens</h2>
+            <h2>Itens</h2>
             <textarea id="itens"></textarea>
-            <h2>caracteristicas</h2>
+            <h2>Características</h2>
             <textarea class="maior" id="caracteristicas"></textarea>  
         </div>
-
     </div> 
     
     <div class="coluna-direita">
-            
-       <div class="pericias">
-    <h2>Perícias</h2>
-    <div class="pericia">
-        <input type="checkbox" id="check-acrobacia">
-        <label for="check-acrobacia">Acrobacia</label>
-        <input type="number" id="acrobacia">
-        <input type="number" id="acrobacia-mod" readonly>
-    </div>
-    <div class="pericia">
-        <input type="checkbox" id="check-adestramento">
-        <label for="check-adestramento">Adestramento</label>
-        <input type="number" id="adestramento">
-        <input type="number" id="adestramento-mod" readonly>
-    </div>
-    <div class="pericia"><input type="checkbox" id="check-atletismo"><label for="check-atletismo">Atletismo</label><input type="number" id="atletismo"><input type="number" readonly id="atletismo-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-atuacao"><label for="check-atuacao">Atuação</label><input type="number" id="atuacao"><input type="number" readonly id="atuacao-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-cavalgar"><label for="check-cavalgar">Cavalgar</label><input type="number" id="cavalgar"><input type="number" readonly id="cavalgar-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-conhecimento"><label for="check-conhecimento">Conhecimento</label><input type="number" id="conhecimento"><input type="number" readonly id="conhecimento-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-cura"><label for="check-cura">Cura</label><input type="number" id="cura"><input type="number" readonly id="cura-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-diplomacia"><label for="check-diplomacia">Diplomacia</label><input type="number" id="diplomacia"><input type="number" readonly id="diplomacia-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-enganacao"><label for="check-enganacao">Enganacao</label><input type="number" id="enganacao"><input type="number" readonly id="enganacao-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-fortitude"><label for="check-fortitude">Fortitude</label><input type="number" id="fortitude"><input type="number" readonly id="fortitude-mod"></div>  
-    <div class="pericia"><input type="checkbox" id="check-furtividade"><label for="check-furtividade">Furtividade</label><input type="number" id="furtividade"><input type="number" readonly id="furtividade-mod"></div>  
-    <div class="pericia"><input type="checkbox" id="check-guerra"><label for="check-guerra">Guerra</label><input type="number" id="guerra"><input type="number" readonly id="guerra-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-iniciativa"><label for="check-iniciativa">Iniciativa</label><input type="number" id="iniciativa"><input type="number" readonly id="iniciativa-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-intimidacao"><label for="check-intimidacao">Intimidação</label><input type="number" id="intimidacao"><input type="number" readonly id="intimidacao-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-intuicao"><label for="check-intuicao">Intuição</label><input type="number" id="intuicao"><input type="number" readonly id="intuicao-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-investigacao"><label for="check-investigacao">Investigação</label><input type="number" id="investigacao"><input type="number" readonly id="investigacao-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-jogatina"><label for="check-jogatina">Jogatina</label><input type="number" id="jogatina"><input type="number" readonly id="jogatina-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-ladinagem"><label for="check-ladinagem">Ladinagem</label><input type="number" id="ladinagem"><input type="number" readonly id="ladinagem-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-luta"><label for="check-luta">Luta</label><input type="number" id="luta"><input type="number" readonly id="luta-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-misticismo"><label for="check-misticismo">Misticismo</label><input type="number" id="misticismo"><input type="number" readonly id="misticismo-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-nobreza"><label for="check-nobreza">Nobreza</label><input type="number" id="nobreza"><input type="number" readonly id="nobreza-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-oficio"><label for="check-oficio">Ofício</label><input type="number" id="oficio"><input type="number" readonly id="oficio-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-percepcao"><label for="check-percepcao">Percepção</label><input type="number" id="percepcao"><input type="number" readonly id="percepcao-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-pilotagem"><label for="check-pilotagem">Pilotagem</label><input type="number" id="pilotagem"><input type="number" readonly id="pilotagem-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-pontaria"><label for="check-pontaria">Pontaria</label><input type="number" id="pontaria"><input type="number" readonly id="pontaria-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-reflexos"><label for="check-reflexos">Reflexos</label><input type="number" id="reflexos"><input type="number" readonly id="reflexos-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-religiao"><label for="check-religiao">Religiao</label><input type="number" id="religiao"><input type="number" readonly id="religiao-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-sobrevivencia"><label for="check-sobrevivencia">Sobrevivencia</label><input type="number" id="sobrevivencia"><input type="number" readonly id="sobrevivencia-mod"></div>
-    <div class="pericia"><input type="checkbox" id="check-vontade"><label for="check-vontade">Vontade</label><input type="number" id="vontade"><input type="number" readonly id="vontade-mod"></div>
+        <div class="pericias">
+            <h2>Perícias</h2>
+            <div class="pericia">
+                <input type="checkbox" id="check-acrobacia">
+                <label for="check-acrobacia">Acrobacia</label>
+                <input type="number" id="acrobacia">
+                <input type="number" id="acrobacia-mod" readonly>
+            </div>
+            <div class="pericia">
+                <input type="checkbox" id="check-adestramento">
+                <label for="check-adestramento">Adestramento</label>
+                <input type="number" id="adestramento">
+                <input type="number" id="adestramento-mod" readonly>
+            </div>
+            <div class="pericia"><input type="checkbox" id="check-atletismo"><label for="check-atletismo">Atletismo</label><input type="number" id="atletismo"><input type="number" readonly id="atletismo-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-atuacao"><label for="check-atuacao">Atuação</label><input type="number" id="atuacao"><input type="number" readonly id="atuacao-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-cavalgar"><label for="check-cavalgar">Cavalgar</label><input type="number" id="cavalgar"><input type="number" readonly id="cavalgar-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-conhecimento"><label for="check-conhecimento">Conhecimento</label><input type="number" id="conhecimento"><input type="number" readonly id="conhecimento-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-cura"><label for="check-cura">Cura</label><input type="number" id="cura"><input type="number" readonly id="cura-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-diplomacia"><label for="check-diplomacia">Diplomacia</label><input type="number" id="diplomacia"><input type="number" readonly id="diplomacia-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-enganacao"><label for="check-enganacao">Enganacao</label><input type="number" id="enganacao"><input type="number" readonly id="enganacao-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-fortitude"><label for="check-fortitude">Fortitude</label><input type="number" id="fortitude"><input type="number" readonly id="fortitude-mod"></div>  
+            <div class="pericia"><input type="checkbox" id="check-furtividade"><label for="check-furtividade">Furtividade</label><input type="number" id="furtividade"><input type="number" readonly id="furtividade-mod"></div>  
+            <div class="pericia"><input type="checkbox" id="check-guerra"><label for="check-guerra">Guerra</label><input type="number" id="guerra"><input type="number" readonly id="guerra-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-iniciativa"><label for="check-iniciativa">Iniciativa</label><input type="number" id="iniciativa"><input type="number" readonly id="iniciativa-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-intimidacao"><label for="check-intimidacao">Intimidação</label><input type="number" id="intimidacao"><input type="number" readonly id="intimidacao-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-intuicao"><label for="check-intuicao">Intuição</label><input type="number" id="intuicao"><input type="number" readonly id="intuicao-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-investigacao"><label for="check-investigacao">Investigação</label><input type="number" id="investigacao"><input type="number" readonly id="investigacao-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-jogatina"><label for="check-jogatina">Jogatina</label><input type="number" id="jogatina"><input type="number" readonly id="jogatina-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-ladinagem"><label for="check-ladinagem">Ladinagem</label><input type="number" id="ladinagem"><input type="number" readonly id="ladinagem-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-luta"><label for="check-luta">Luta</label><input type="number" id="luta"><input type="number" readonly id="luta-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-misticismo"><label for="check-misticismo">Misticismo</label><input type="number" id="misticismo"><input type="number" readonly id="misticismo-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-nobreza"><label for="check-nobreza">Nobreza</label><input type="number" id="nobreza"><input type="number" readonly id="nobreza-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-oficio"><label for="check-oficio">Ofício</label><input type="number" id="oficio"><input type="number" readonly id="oficio-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-percepcao"><label for="check-percepcao">Percepção</label><input type="number" id="percepcao"><input type="number" readonly id="percepcao-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-pilotagem"><label for="check-pilotagem">Pilotagem</label><input type="number" id="pilotagem"><input type="number" readonly id="pilotagem-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-pontaria"><label for="check-pontaria">Pontaria</label><input type="number" id="pontaria"><input type="number" readonly id="pontaria-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-reflexos"><label for="check-reflexos">Reflexos</label><input type="number" id="reflexos"><input type="number" readonly id="reflexos-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-religiao"><label for="check-religiao">Religiao</label><input type="number" id="religiao"><input type="number" readonly id="religiao-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-sobrevivencia"><label for="check-sobrevivencia">Sobrevivencia</label><input type="number" id="sobrevivencia"><input type="number" readonly id="sobrevivencia-mod"></div>
+            <div class="pericia"><input type="checkbox" id="check-vontade"><label for="check-vontade">Vontade</label><input type="number" id="vontade"><input type="number" readonly id="vontade-mod"></div>
+        </div>
+
+        <div class="habilidade_2">
+            <h2>Magias</h2>
+            <textarea class="maior" id="magias"></textarea>
+        </div>
+    </div> 
 </div>
 
-<div class="habilidade_2">
-    <h2>magias</h2>
-    <textarea class="maior" id="magias"></textarea>
-</div>
-</div> 
-    </div>
-</div> </div> 
-<div style="text-align: center; margin: 30px 0 50px 0;">
+<div class="botoes-container">
     <div id="lista-de-fichas"></div>
-    <button onclick="criarNovaFicha()">+ Nova Ficha</button>
-   
+    <div class="botoes-acao">
+        <button onclick="criarNovaFicha()">+ Nova Ficha</button>
+        <button onclick="gerarLinkCompartilhamento()">🔗 Partilhar Ficha</button>
+    </div>
 </div>
- <button onclick="gerarLinkCompartilhamento()">🔗 Compartilhar Ficha</button>
+
 <script src="script.js"></script>
 </body>
 </html>
